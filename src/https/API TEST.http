@@ -1,0 +1,92 @@
+### helloWorldInternationalized
+GET http://localhost:8088/hello-world-internationalized
+Accept-Language: en
+
+### retrieveAllUsers
+GET http://localhost:8088/users
+Accept: application/json
+
+### retrieveAllUsers
+GET http://localhost:8088/users2
+Accept: application/json
+
+### retrieveUser
+GET http://localhost:8088/users/1
+#Authorization: Basic user cf8796a1-e0c9-4f0c-95f9-e25b5f596d82
+#Authorization: Basic user userPass
+#Authorization: Basic daniel 1234
+
+### createUser
+POST http://localhost:8088/users
+Content-Type: application/json
+
+{
+  "name": "N",
+  "joinDate": "2023-07-07T16:15:03.235+00:00"
+}
+
+### deleteUser
+DELETE http://localhost:8088/users/1
+
+### ADMIN retrieveAllUsers
+GET http://localhost:8088/admin/users
+Accept: application/json
+
+### ADMIN V1 retrieveUser
+GET http://localhost:8088/admin/v1/users/1
+Accept: application/json
+
+### ADMIN V2 retrieveUser
+GET http://localhost:8088/admin/v2/users/1
+Accept: application/json
+
+### ADMIN params retrieveUser
+GET http://localhost:8088/admin/users/1/?version=2
+Accept: application/json
+
+### ADMIN headers retrieveUser
+GET http://localhost:8088/admin/users/1
+Accept: application/json
+X-API-VERSION: 2
+
+### ADMIN headers retrieveUser
+GET http://localhost:8088/admin/users/1
+Accept: application/vnd.company.appv2+json
+
+### JPA retrieveAllUsers
+GET http://localhost:8088/jpa/users
+Accept: application/json
+
+### JPA retrieveAllUsers
+GET http://localhost:8088/jpa/users/1
+Accept: application/json
+
+### JPA+HATEOS retrieveAllUsers
+GET http://localhost:8088/jpa/users/hateos/1
+Accept: application/json
+
+### JPA deleteUser
+DELETE http://localhost:8088/jpa/users/90001
+
+### JPA createUser
+POST http://localhost:8088/jpa/users
+Content-Type: application/json
+
+{
+  "name": "User4",
+  "joinDate": "2023-07-09T15:39:48.704+00:00",
+  "password": "test4444",
+  "ssn": "601010-1111111"
+}
+
+### JPA retrieveAllPostsByUser
+GET http://localhost:8088/jpa/users/10002/posts
+Accept: application/json
+
+### JPA createUser
+POST http://localhost:8088/jpa/users/90001/posts
+Content-Type: application/json
+
+{
+  "description": "My third post"
+}
